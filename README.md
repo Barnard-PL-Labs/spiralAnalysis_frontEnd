@@ -1,1 +1,3 @@
-# spiralAnalysis_frontEnd
+# Spiral Analysis
+
+Draw spirals and log trace info

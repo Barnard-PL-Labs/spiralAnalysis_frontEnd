@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>Graphs</title>
+    <meta charset="utf-8">
+    <script src="https://unpkg.com/d3-3d/build/d3-3d.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <link rel="stylesheet"  href="./lightslider.css"/>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.plot.ly/plotly-2.14.0.min.js"></script>
+    <div style = "width:40%; margin-left:30%; margin-right:30%">
+    <h1 id="spinning-wheel" style="color: #15458d; z-index:4;">Please wait for the Degree of Severity...</h1>
+    <h1><a href="./index.html" id="redraw" style="visibility:hidden; color: #15458d; z-index:4;">Please redraw your spiral</a></h1></div>
+    <div style = "width:20%; margin-left:40%; margin-right:40%">
+    <h1 id="DOSindex" style="color: #15458d; z-index:4; text-align:center"></h1></div>
+    <style>
+    	ul{
+			list-style: none outside none;
+		    padding-left: 0;
+            margin: 0;
+		}
+        .demo .item{
+            margin-bottom: 60px;
+        }
+		.content-slider li{
+		    background-color: #ed3020;
+		    text-align: center;
+		    color: rgb(255, 255, 255);
+		}
+		.content-slider h3 {
+		    margin: 0;
+		    padding: 70px 0;
+		}
+		.demo{
+			height: 800px;
+		}
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="src/js/lightslider.js"></script> 
+    <script>
+    	 $(document).ready(function() {
+			$("#content-slider").lightSlider({
+                loop:true,
+                keyPress:true
+            });
+            $('#image-gallery').lightSlider({
+                gallery:true,
+                item:1,
+                thumbItem:5,
+                slideMargin: 0,
+                speed:500,
+               // auto:true,
+                loop:true,
+                onSliderLoad: function() {
+                    $('#image-gallery').removeClass('cS-hidden');
+                }  
+            });
+		});
+    </script>
+</head>
+<body>
+	<div class="demo" style = "width:50%; margin-left:31%; margin-right:19%">
+        <div class="item">            
+            <div class="clearfix" style="width: 500px;">
+                <ul id="image-gallery" class="gallery list-unstyled cS-hidden">
+                    <li id="osthumb"> 
+                        <div id="OS"></div>
+                         </li>
+                    <li id="ttthumb"> 
+                        <div id="TT"></div>
+                        </li>
+                    <li id="pxthumb">
+                        <div id="PX"></div>
+                        </li>
+                    <li id="pythumb">
+                        <div id="PY"></div>
+                        </li>
+                    <li id="ptthumb">
+                        <div id="PT"></div>
+                        </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <script src="./js/libs/Board.js"></script>
+    <script src="js/libs/Graphs.js"></script>
+</body>
